@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Akshay VJ & Sujitha K — Wedding Invitation</title>
+
+    <meta
+        name="description"
+        content="A special invitation to celebrate the wedding of Akshay VJ and Sujitha K."
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Great+Vibes&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     INTRO SCREEN
+========================================================= -->
+
+<div id="introScreen" class="intro-screen">
+
+    <div class="intro-glow"></div>
+
+    <div class="intro-content">
+
+        <div class="intro-symbol">✦</div>
+
+        <p class="eyebrow">
+            A SPECIAL INVITATION
+        </p>
+
+        <h1>
+            Dear <span id="introGuestName">Guest</span>
+        </h1>
+
+        <p class="intro-message">
+            Some moments become more beautiful
+            when shared with the people who matter.
+        </p>
+
+        <button id="enterInvitation" class="primary-button">
+            Enter the Celebration
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     MUSIC
+========================================================= -->
+
+<audio id="weddingMusic" loop>
+    <!-- Replace with your licensed/client-owned music -->
+    <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
+<button
+    id="musicToggle"
+    class="music-button"
+    aria-label="Toggle music"
+>
+    ♫
+</button>
+
+
+<!-- =========================================================
+     MAIN WEBSITE
+========================================================= -->
+
+<main id="mainContent" class="main-content">
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero section">
+
+    <div class="hero-decoration decoration-one"></div>
+    <div class="hero-decoration decoration-two"></div>
+
+    <div class="hero-content reveal">
+
+        <p class="eyebrow">
+            WITH LOVE & WARMTH
+        </p>
+
+        <p class="personal-greeting">
+            Dear <span id="heroGuestName">Guest</span>,
+        </p>
+
+        <h1 class="couple-name">
+            Akshay VJ
+            <span>&</span>
+            Sujitha K
+        </h1>
+
+        <p class="hero-subtitle">
+            We would love for you to be part of
+            our beautiful beginning.
+        </p>
+
+        <div class="gold-line"></div>
+
+        <p class="hero-date">
+            06 — 07 December 2026
+        </p>
+
+        <a href="#story" class="scroll-hint">
+            <span>Discover our celebration</span>
+            <span class="scroll-arrow">↓</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STORY
+========================================================= -->
+
+<section id="story" class="story section">
+
+    <div class="container reveal">
+
+        <p class="eyebrow">
+            A NEW CHAPTER
+        </p>
+
+        <h2>
+            Two hearts.<br>
+            One beautiful beginning.
+        </h2>
+
+        <p class="section-text">
+            With the blessings of our families and the love
+            of those who mean the most to us, we begin a
+            new chapter together.
+        </p>
+
+        <div class="family-pair">
+
+            <div class="person-card">
+
+                <span class="person-label">
+                    THE GROOM
+                </span>
+
+                <h3>Akshay VJ</h3>
+
+                <p>
+                    Son of<br>
+                    Janakan VM<br>
+                    &<br>
+                    Sreeja KV
+                </p>
+
+            </div>
+
+            <div class="heart-symbol">
+                ♡
+            </div>
+
+            <div class="person-card">
+
+                <span class="person-label">
+                    THE BRIDE
+                </span>
+
+                <h3>Sujitha K</h3>
+
+                <p>
+                    Daughter of<br>
+                    Krishnan K<br>
+                    &<br>
+                    Suseela M
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     COUNTDOWN
+========================================================= -->
+
+<section class="countdown-section section">
+
+    <div class="container reveal">
+
+        <p class="eyebrow">
+            COUNTING THE MOMENTS
+        </p>
+
+        <h2>
+            Until we celebrate
+        </h2>
+
+        <div class="countdown">
+
+            <div class="count-box">
+                <strong id="days">00</strong>
+                <span>Days</span>
+            </div>
+
+            <div class="count-box">
+                <strong id="hours">00</strong>
+                <span>Hours</span>
+            </div>
+
+            <div class="count-box">
+                <strong id="minutes">00</strong>
+                <span>Minutes</span>
+            </div>
+
+            <div class="count-box">
+                <strong id="seconds">00</strong>
+                <span>Seconds</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WEDDING
+========================================================= -->
+
+<section class="event-section section">
+
+    <div class="container event-container reveal">
+
+        <span class="chapter-number">
+            CHAPTER I
+        </span>
+
+        <p class="eyebrow">
+            THE BEGINNING
+        </p>
+
+        <h2>
+            Wedding Ceremony
+        </h2>
+
+        <div class="event-date">
+            <span>06</span>
+            <div>
+                <strong>DECEMBER</strong>
+                <small>2026</small>
+            </div>
+        </div>
+
+        <div class="event-details">
+
+            <p>
+                <strong>10:00 AM — 10:30 AM</strong>
+            </p>
+
+            <h3>
+                Gayathri Hall
+            </h3>
+
+            <p>
+                Kollengode
+            </p>
+
+        </div>
+
+        <a
+            href="https://maps.app.goo.gl/upx5UQuVUR3r19Lt7"
+            target="_blank"
+            rel="noopener"
+            class="secondary-button"
+        >
+            View Location
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     RECEPTION
+========================================================= -->
+
+<section class="event-section reception section">
+
+    <div class="container event-container reveal">
+
+        <span class="chapter-number">
+            CHAPTER II
+        </span>
+
+        <p class="eyebrow">
+            THE CELEBRATION
+        </p>
+
+        <h2>
+            Reception
+        </h2>
+
+        <div class="event-date">
+            <span>07</span>
+            <div>
+                <strong>DECEMBER</strong>
+                <small>2026</small>
+            </div>
+        </div>
+
+        <div class="event-details">
+
+            <p>
+                <strong>5:30 PM — 8:30 PM</strong>
+            </p>
+
+            <h3>
+                The PALAZZO
+            </h3>
+
+        </div>
+
+        <a
+            href="https://maps.app.goo.gl/tcfSnBAF48NrcCRX8"
+            target="_blank"
+            rel="noopener"
+            class="secondary-button"
+        >
+            View Location
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WEATHER
+========================================================= -->
+
+<section class="weather-section section">
+
+    <div class="container reveal">
+
+        <p class="eyebrow">
+            A LITTLE LOOK AT THE DAY
+        </p>
+
+        <h2>
+            December skies
+        </h2>
+
+        <div class="weather-card">
+
+            <div class="weather-icon">
+                ☼
+            </div>
+
+            <div>
+                <strong id="weatherTemperature">
+                    —
+                </strong>
+
+                <p id="weatherDescription">
+                    Weather information will appear closer
+                    to the celebration.
+                </p>
+            </div>
+
+        </div>
+
+        <p class="weather-location">
+            The PALAZZO · 07 December 2026
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     RSVP
+========================================================= -->
+
+<section id="rsvp" class="rsvp-section section">
+
+    <div class="container reveal">
+
+        <p class="eyebrow">
+            YOUR PRESENCE
+        </p>
+
+        <h2>
+            Will you join us?
+        </h2>
+
+        <p class="section-text">
+            Your presence would mean so much to us.
+        </p>
+
+        <form id="rsvpForm" class="rsvp-form">
+
+            <div class="input-group">
+
+                <label for="guestName">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="guestName"
+                    name="guestName"
+                    placeholder="Enter your name"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Will you be celebrating with us?
+                </label>
+
+                <div class="choice-group">
+
+                    <label class="choice">
+                        <input
+                            type="radio"
+                            name="attendance"
+                            value="Attending"
+                            required
+                        >
+                        <span>
+                            Joyfully, I'll be there
+                        </span>
+                    </label>
+
+                    <label class="choice">
+                        <input
+                            type="radio"
+                            name="attendance"
+                            value="Not Attending"
+                        >
+                        <span>
+                            I'll be celebrating from afar
+                        </span>
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="guests">
+                    Number of Guests
+                </label>
+
+                <select
+                    id="guests"
+                    name="guests"
+                >
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                </select>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="message">
+                    A little note for Akshay & Sujitha
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Write something from the heart..."
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-button submit-button"
+            >
+                Send My Response
+            </button>
+
+            <p
+                id="formStatus"
+                class="form-status"
+                aria-live="polite"
+            ></p>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAMILY
+========================================================= -->
+
+<section class="family-section section">
+
+    <div class="container reveal">
+
+        <p class="eyebrow">
+            WITH THE BLESSINGS OF OUR FAMILIES
+        </p>
+
+        <h2>
+            Together with<br>
+            those we love.
+        </h2>
+
+        <div class="family-details">
+
+            <div>
+                <h3>Akshay VJ</h3>
+                <p>
+                    Janakan VM<br>
+                    Sreeja KV
+                </p>
+            </div>
+
+            <div>
+                <h3>Sujitha K</h3>
+                <p>
+                    Krishnan K<br>
+                    Suseela M
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="contact-section section">
+
+    <div class="container reveal">
+
+        <p class="eyebrow">
+            NEED ANYTHING?
+        </p>
+
+        <h2>
+            We're just a message away.
+        </h2>
+
+        <p class="section-text">
+            If you need help finding the venue or
+            have any questions, feel free to reach us.
+        </p>
+
+        <div class="contact-buttons">
+
+            <a
+                href="tel:+919388383396"
+                class="secondary-button"
+            >
+                Call Akshay
+            </a>
+
+            <a
+                href="https://wa.me/919388383396"
+                target="_blank"
+                rel="noopener"
+                class="secondary-button"
+            >
+                WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL
+========================================================= -->
+
+<section class="final-section section">
+
+    <div class="container reveal">
+
+        <div class="final-symbol">
+            ✦
+        </div>
+
+        <p class="eyebrow">
+            UNTIL WE MEET
+        </p>
+
+        <h2>
+            We can't wait<br>
+            to celebrate with you.
+        </h2>
+
+        <p class="final-message">
+            With love,
+        </p>
+
+        <h3 class="signature">
+            Akshay & Sujitha
+        </h3>
+
+        <p class="final-date">
+            06 — 07 December 2026
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    id="toast"
+    class="toast"
+    role="status"
+>
+    RSVP received. Thank you!
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
