@@ -283,27 +283,135 @@ if (musicToggle) {
     );
 }
 /* ============================================================
-   GUEST NAME FROM URL
-   Example:
-   yourwebsite.com/?guest=Arjun
+   GUEST + EVENT PERSONALIZATION
 ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const params = new URLSearchParams(window.location.search);
-    const guestName = params.get("to");
+    const params =
+        new URLSearchParams(window.location.search);
 
-    const guestElement = document.getElementById("introGuestName");
 
-    if (guestName && guestElement) {
+    /* ========================================================
+       GUEST NAME
+       
+       Example:
+       yourwebsite.com/?guest=Arjun
+    ======================================================== */
 
-        const name = decodeURIComponent(guestName)
-            .trim()
-            .replace(/\s+/g, " ");
+    const guestName =
+        params.get("guest");
+
+    if (guestName) {
+
+        const name =
+            decodeURIComponent(guestName)
+                .trim()
+                .replace(/\s+/g, " ");
+
+        const introGuest =
+            document.getElementById("introGuestName");
+
+        const heroGuest =
+            document.getElementById("heroGuestName");
+
+        const guestInput =
+            document.getElementById("guestName");
 
         if (name) {
-            guestElement.textContent = name;
+
+            if (introGuest) {
+                introGuest.textContent = name;
+            }
+
+            if (heroGuest) {
+                heroGuest.textContent = name;
+            }
+
+            if (guestInput) {
+                guestInput.value = name;
+            }
+
         }
+    }
+
+
+    /* ========================================================
+       EVENT VISIBILITY
+       
+       Examples:
+
+       ?guest=Arjun&events=both
+       ?guest=Arjun&events=wedding
+       ?guest=Arjun&events=reception
+    ======================================================== */
+
+    const eventType =
+        params.get("events");
+
+    const weddingEvent =
+        document.getElementById("weddingEvent");
+
+    const receptionEvent =
+        document.getElementById("receptionEvent");
+
+
+    /*
+       If no events parameter exists,
+       show BOTH events.
+    */
+
+    if (!eventType) {
+        return;
+    }
+
+
+    /* ========================================================
+       WEDDING ONLY
+    ======================================================== */
+
+    if (
+        eventType.toLowerCase() === "wedding"
+    ) {
+
+        if (receptionEvent) {
+            receptionEvent.style.display = "none";
+        }
+
+    }
+
+
+    /* ========================================================
+       RECEPTION ONLY
+    ======================================================== */
+
+    else if (
+        eventType.toLowerCase() === "reception"
+    ) {
+
+        if (weddingEvent) {
+            weddingEvent.style.display = "none";
+        }
+
+    }
+
+
+    /* ========================================================
+       BOTH
+    ======================================================== */
+
+    else if (
+        eventType.toLowerCase() === "both"
+    ) {
+
+        if (weddingEvent) {
+            weddingEvent.style.display = "";
+        }
+
+        if (receptionEvent) {
+            receptionEvent.style.display = "";
+        }
+
     }
 
 });
