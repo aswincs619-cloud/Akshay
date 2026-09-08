@@ -281,8 +281,7 @@ if (musicToggle) {
 
         }
     );
-}
-/* ============================================================
+}/* ============================================================
    GUEST + EVENT PERSONALIZATION
 ============================================================ */
 
@@ -294,7 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ========================================================
        GUEST NAME
-       
+
        Example:
        yourwebsite.com/?guest=Arjun
     ======================================================== */
@@ -338,12 +337,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ========================================================
        EVENT VISIBILITY
-       
+
        Examples:
 
-       ?guest=Arjun&events=both
        ?guest=Arjun&events=wedding
        ?guest=Arjun&events=reception
+       ?guest=Arjun&events=wedding,reception
     ======================================================== */
 
     const eventType =
@@ -356,10 +355,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("receptionEvent");
 
 
-    /*
-       If no events parameter exists,
-       show BOTH events.
-    */
+    /* ========================================================
+       IF NO EVENTS PARAMETER
+       SHOW BOTH
+    ======================================================== */
 
     if (!eventType) {
         return;
@@ -367,55 +366,64 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ========================================================
-       WEDDING ONLY
+       CONVERT:
+
+       wedding,reception
+
+       INTO:
+
+       ["wedding", "reception"]
     ======================================================== */
 
-    if (
-        eventType.toLowerCase() === "wedding"
-    ) {
-
-        if (receptionEvent) {
-            receptionEvent.style.display = "none";
-        }
-
-    }
+    const selectedEvents =
+        eventType
+            .toLowerCase()
+            .split(",")
+            .map(event => event.trim());
 
 
     /* ========================================================
-       RECEPTION ONLY
+       WEDDING
     ======================================================== */
 
-    else if (
-        eventType.toLowerCase() === "reception"
-    ) {
+    if (weddingEvent) {
 
-        if (weddingEvent) {
-            weddingEvent.style.display = "none";
-        }
+        if (
+            selectedEvents.includes("wedding")
+        ) {
 
-    }
-
-
-    /* ========================================================
-       BOTH
-    ======================================================== */
-
-    else if (
-        eventType.toLowerCase() === "both"
-    ) {
-
-        if (weddingEvent) {
             weddingEvent.style.display = "";
+
+        } else {
+
+            weddingEvent.style.display = "none";
+
         }
 
-        if (receptionEvent) {
+    }
+
+
+    /* ========================================================
+       RECEPTION
+    ======================================================== */
+
+    if (receptionEvent) {
+
+        if (
+            selectedEvents.includes("reception")
+        ) {
+
             receptionEvent.style.display = "";
+
+        } else {
+
+            receptionEvent.style.display = "none";
+
         }
 
     }
 
 });
-
 /* ============================================================
    SCROLL REVEAL
 ============================================================ */
