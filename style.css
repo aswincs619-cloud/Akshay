@@ -45,6 +45,16 @@ html {
     scroll-behavior: smooth;
 }
 
+/* ============================================================
+   LOCK PAGE SCROLL WHILE INTRO SCREEN IS OPEN
+============================================================ */
+
+body.intro-active {
+    overflow: hidden;
+    height: 100vh;
+    touch-action: none;
+}
+
 body {
 
     background: var(--ivory);
