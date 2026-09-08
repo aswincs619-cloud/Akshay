@@ -65,6 +65,40 @@ const toast =
 let musicWasPlaying = false;
 let pausedBecauseHidden = false;
 
+/* ============================================================
+   INTRO SCREEN SCROLL LOCK
+============================================================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const introScreen =
+        document.getElementById("introScreen");
+
+    const enterInvitation =
+        document.getElementById("enterInvitation");
+
+
+    /* Lock scrolling while invitation screen is open */
+
+    if (introScreen && !introScreen.classList.contains("hidden")) {
+        document.body.classList.add("intro-active");
+    }
+
+
+    /* Unlock scrolling when entering invitation */
+
+    if (enterInvitation) {
+
+        enterInvitation.addEventListener("click", () => {
+
+            document.body.classList.remove("intro-active");
+
+        });
+
+    }
+
+});
+
 
 /* ============================================================
    TRACK MUSIC STATE
@@ -214,13 +248,28 @@ if (enterInvitation) {
         "click",
         async function () {
 
+            /* Unlock page scrolling */
+
+            document.body.classList.remove(
+                "intro-active"
+            );
+
+
+            /* Hide landing screen */
+
             introScreen.classList.add(
                 "hidden"
             );
 
+
+            /* Show invitation */
+
             mainContent.classList.add(
                 "visible"
             );
+
+
+            /* Start music */
 
             try {
 
@@ -228,8 +277,7 @@ if (enterInvitation) {
 
                 await weddingMusic.play();
 
-                musicToggle.textContent =
-                    "♫";
+                musicToggle.textContent = "♫";
 
             } catch (error) {
 
@@ -241,8 +289,8 @@ if (enterInvitation) {
 
         }
     );
-}
 
+}
 
 /* ============================================================
    MUSIC
