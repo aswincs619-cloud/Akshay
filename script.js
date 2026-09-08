@@ -4,10 +4,32 @@
 ============================================================ */
 
 // Your deployed Google Apps Script Web App URL
-const RSVP_GOOGLE_SCRIPT_URL =
-    "YOUR_GOOGLE_APPS_SCRIPT_EXEC_URL";
+ const SPREADSHEET_ID = "1f89Ocvp9Ff99vHKsJp4IX08RZNxFC2PliMmKmBNxvY8";
+    const RSVP_GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbxPi-BNpQuHqg8Xxngsqj34DX40cICuJ8LMqvOZUbF7RCkdB09cVZDeo3dZFXUL1O2X/exec";
 
+async function submitRSVP(data) {
 
+    console.log("RSVP DATA:", data);
+    console.log("Sending to:", RSVP_GOOGLE_SCRIPT_URL);
+
+    const formData = new URLSearchParams();
+
+    formData.append("name", data.name || "");
+    formData.append("attendance", data.attendance || "");
+    formData.append("guests", data.guests || "1");
+    formData.append("message", data.message || "");
+
+    const response = await fetch(RSVP_GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+    });
+
+    console.log("Google request completed:", response);
+
+    return { success: true };
+}
 /* ============================================================
    DOM
 ============================================================ */
@@ -451,88 +473,6 @@ setInterval(
     updateCountdown,
     1000
 );
-
-
-/* ============================================================
-   GOOGLE APPS SCRIPT RSVP
-============================================================ */
-
-async function submitRSVP(data) {
-
-    if (
-        !RSVP_GOOGLE_SCRIPT_URL ||
-        RSVP_GOOGLE_SCRIPT_URL.includes(
-            "YOUR_GOOGLE"
-        )
-    ) {
-
-        throw new Error(
-            "Google Apps Script URL is not configured."
-        );
-    }
-
-    console.log(
-        "Submitting RSVP:",
-        data
-    );
-
-    console.log(
-        "Sending to:",
-        RSVP_GOOGLE_SCRIPT_URL
-    );
-
-    const formData =
-        new URLSearchParams();
-
-    formData.append(
-        "name",
-        data.name || ""
-    );
-
-    formData.append(
-        "attendance",
-        data.attendance || ""
-    );
-
-    formData.append(
-        "guests",
-        data.guests || "1"
-    );
-
-    formData.append(
-        "message",
-        data.message || ""
-    );
-
-
-    /*
-     * no-cors is intentionally used because
-     * Google Apps Script Web Apps do not provide
-     * normal browser CORS handling for this request.
-     */
-
-    await fetch(
-        RSVP_GOOGLE_SCRIPT_URL,
-        {
-            method: "POST",
-
-            mode: "no-cors",
-
-            body:
-                formData.toString(),
-
-            headers: {
-                "Content-Type":
-                    "application/x-www-form-urlencoded;charset=UTF-8"
-            }
-        }
-    );
-
-    return {
-        success: true
-    };
-}
-
 
 /* ============================================================
    RSVP FORM
